@@ -93,3 +93,13 @@ rect.setBottom = function setBottom(rect, value) {
   rect[1] = value - rect[3];
   return rect;
 };
+
+rect.contains = function contains(rect, point) {
+  const left = rect[0];
+  const top = rect[1];
+  const x = point[0];
+  const y = point[1];
+  return (
+    left <= x && x <= left + rect[2] && top <= y && y <= top + rect[3]
+  );
+};
