@@ -1,14 +1,20 @@
 {
   "name": "gl-matrix-extension",
-  "version": "0.0.2",
+  "version": "0.1.0",
+  "scripts": {
+    "prepublish": "tsc -p src"
+  },
+  "devDependencies": {
+    "typescript": "^4.1.2"
+  },
   "dependencies": {
+    "@essentials/raf": "^3.4.1",
     "cuid": "^2.1.8",
     "gl-matrix": "^3.3.0",
-    "performance-now": "^2.1.0",
-    "raf": "^3.4.1"
+    "performance-now": "^2.1.0"
   },
   "description": "A set of utilities for interactive web content creation when using gl-matrix.",
-  "main": "index.js",
+  "main": "lib/index.js",
   "repository": "https://github.com/blfunex/gl-matrix-extension.git",
   "author": "Youness B. <11468624+blfunex@users.noreply.github.com>",
   "license": "MIT"
