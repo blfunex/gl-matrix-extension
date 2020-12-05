@@ -18,18 +18,18 @@ Here is some suggestions for contributions
    like for `vec2` it will be `vec2Ext`;
 2. **New data structures**: we will use the same convention as `gl-matrix`,
    lowercase the name, if it can have dimension size we append it as
-   suffix, (examples: `rect`, `aabb2`, `aabb3`, `orect`, `oaabb3`,
-   `sphere`, `circle`, `octree`);
+   suffix, (examples: `rect`, `box2`, `box3`, `obb3`,
+   `sphere`, `circle`, `octree` ... etc);
 3. **Intersections**: in some situations the user might just need to know
-   if two things intersect, in that case she should use the
+   if two things intersect, in that case they should use the
    `intersect${Thing}` functions, and when they are ready to get more
-   details she should call `intersection${Thing}`, the
+   details they should call `intersection${Thing}`, the
    `getIntersection${Thing}` should not do any checking, it is assumed that
    the user already did the intersection test, and if the intersection
    fails, the result is undefined (I mean an undefined result not literal
    `undefined`). We might consider a
    `tryGetIntersection${Thing}(out, ...): boolean `, see #1
-4. **Class vs `gl-matrix`-like structure**: we might use classes for more complex objects, like in a `Transform` class exposing a `position: vec3`, `quaternion: quat`, `euler: vec3`, and a `scale: vec3`, and a generated `transform: mat4` (#4), see #2
+4. **Class vs `gl-matrix`-like structure**: we might use classes for more complex objects, like in a `Transform` class exposing a `position: vec3`, `rotation: quat`, and a `scale: vec3`, and a generated `transform: mat4` (#4), see #2
 5. **ArrayBuffer views**: EcmaScript provides a way to have views into array buffers, it would be more efficient if some class data structures used this property when making their substructures like, in `frustum`'s 6 `planes` (#5), or `aabb3`'s `min` and `max` `vec3`s, see #2, and #3
 
 ## Features / Roadmap
